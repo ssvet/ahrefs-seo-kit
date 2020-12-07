@@ -12,7 +12,7 @@ spl_autoload_register( // @phpstan-ignore-next-line -- can not use return type a
 			}
 		}
 		$relative_path = str_replace( '_', '/', substr( $class, $len ) );
-		$file           = __DIR__ . '/apiclient-services/src/Google/Service/' . $relative_path . '.php';
+		$file           = __DIR__ . '/google-apiclient-services/src/Google/Service/' . $relative_path . '.php';
 		if ( file_exists( $file ) ) {
 			require_once $file;
 		}
