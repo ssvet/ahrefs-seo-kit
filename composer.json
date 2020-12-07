@@ -1,0 +1,45 @@
+{
+	"name": "ssvet/ahrefs-seo-kit",
+	"description": "Kit used by Ahrefs Seo plugin.",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=5.4",
+		"firebase/php-jwt": "~2.0|~3.0|~4.0|~5.0",
+		"guzzlehttp/guzzle": "^5.3.1|^6.2.1|^7.0",
+		"guzzlehttp/psr7": "^1.2",
+		"psr/http-message": "^1.0",
+		"psr/cache": "^1.0",
+		"monolog/monolog": "^1.17|^2.0",
+		"phpseclib/phpseclib": "~0.3.10||~2.0"
+	},
+	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Google\\Auth\\": "inc/google-auth/src",
+			"ahrefs\\AhrefsSeoKit\\Google\\Auth\\": "inc/google-auth/src",
+			"Google\\": "inc/google-apiclient/src/",
+			"ahrefs\\AhrefsSeoKit\\Google\\": "inc/google-apiclient/src/"
+		},
+		"files": [
+			"inc/google-apiclient/src/aliases.php",
+			"client-services-loader.php"
+		],
+		"classmap": [
+			"inc/google-apiclient/src/aliases.php"
+		]
+	},
+	"scripts": {
+		"prepare" : "composer install --no-dev --prefer-dist",
+		"build" : "php-scoper add-prefix --output-dir=inc --force",
+		"bin": "echo 'bin not installed'",
+		"post-install-cmd": ["@composer bin all install --ansi"],
+		"post-update-cmd": ["@composer bin all update --ansi" ]
+	},
+	"extra": {
+		"google/apiclient-services": [
+			"Analytics"
+		]
+	}
+}
