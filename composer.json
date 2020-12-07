@@ -14,17 +14,17 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Google\\Auth\\": "inc/google-auth/src",
-			"ahrefs\\AhrefsSeoKit\\Google\\Auth\\": "inc/google-auth/src",
-			"Google\\": "inc/google-apiclient/src/",
-			"ahrefs\\AhrefsSeoKit\\Google\\": "inc/google-apiclient/src/"
+			"Google\\Auth\\": "google-auth/src",
+			"ahrefs\\AhrefsSeoKit\\Google\\Auth\\": "google-auth/src",
+			"Google\\": "google-apiclient/src/",
+			"ahrefs\\AhrefsSeoKit\\Google\\": "google-apiclient/src/"
 		},
 		"files": [
-			"inc/google-apiclient/src/aliases.php",
+			"google-apiclient/src/aliases.php",
 			"client-services-loader.php"
 		],
 		"classmap": [
-			"inc/google-apiclient/src/aliases.php"
+			"google-apiclient/src/aliases.php"
 		]
 	}
 }
